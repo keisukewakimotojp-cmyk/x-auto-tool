@@ -1,0 +1,23 @@
+# Environment
+python-dotenv>=1.0.0
+
+# Claude API
+anthropic>=0.25.0
+
+# X (Twitter) API
+tweepy>=4.14.0
+
+# Trend fetching (RSS / HTTP)
+requests>=2.31.0
+feedparser>=6.0.11
+
+# Future: scheduling
+# apscheduler>=3.10.0
+
+# Future: database (PostgreSQL)
+# sqlalchemy>=2.0.0
+# psycopg2-binary>=2.9.0
+
+# Future: analytics / visualization
+# pandas>=2.0.0
+# matplotlib>=3.8.0
