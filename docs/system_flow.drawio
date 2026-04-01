@@ -1,0 +1,138 @@
+<mxfile host="Claude Code" modified="2026-04-01T00:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram name="x-auto-tool System Flow" id="system-flow">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== LANE LABELS ===== -->
+        <mxCell id="lane-external" value="External Sources" style="swimlane;startSize=30;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="120" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-core" value="Core Pipeline" style="swimlane;startSize=30;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="120" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-ai" value="AI Layer" style="swimlane;startSize=30;horizontal=0;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="120" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-human" value="Human Review" style="swimlane;startSize=30;horizontal=0;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="60" width="120" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-publish" value="Publish" style="swimlane;startSize=30;horizontal=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="60" width="120" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-future" value="Future Hooks" style="swimlane;startSize=30;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="60" width="140" height="320" as="geometry" />
+        </mxCell>
+
+        <!-- ===== TITLE ===== -->
+        <mxCell id="title" value="x-auto-tool — System Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="840" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: EXTERNAL ===== -->
+        <mxCell id="rss" value="RSS Feed&#xa;(Google News)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="google-trends" value="Google Trends&#xa;(Future)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: CORE PIPELINE ===== -->
+        <mxCell id="trend-fetcher" value="trend_fetcher.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="main" value="main.py&#xa;(Orchestrator)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: AI LAYER ===== -->
+        <mxCell id="content-gen" value="content_generator.py&#xa;(Claude API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="120" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="risk-checker" value="risk_checker&#xa;(Future)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="340" y="230" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: HUMAN REVIEW ===== -->
+        <mxCell id="review" value="Human Review&#xa;(Terminal)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="472" y="110" width="96" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="rejected" value="Rejected&#xa;(Cancel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="472" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: PUBLISH ===== -->
+        <mxCell id="x-poster" value="x_poster.py&#xa;(Tweepy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="120" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="x-platform" value="X / Twitter" style="shape=mxgraph.social.twitter;fillColor=#1DA1F2;strokeColor=#none;fontColor=#ffffff;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="622" y="220" width="76" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODES: FUTURE ===== -->
+        <mxCell id="scheduler" value="scheduler&#xa;(APScheduler)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="760" y="100" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="engagement-bot" value="engagement_bot&#xa;(Auto Reply)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="760" y="170" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="account-manager" value="account_manager&#xa;(Multi-account)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="760" y="230" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics" value="analytics&#xa;(Dashboard)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="760" y="290" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES: MAIN FLOW ===== -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rss" target="trend-fetcher" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="trend-fetcher" target="main" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="trends[ ]" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="main" target="content-gen" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="tweet text" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="content-gen" target="review" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="approved" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;" edge="1" source="review" target="x-poster" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="rejected" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;" edge="1" source="review" target="rejected" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="x-poster" target="x-platform" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES: FUTURE ===== -->
+        <mxCell id="ef1" value="triggers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#666666;" edge="1" source="scheduler" target="main" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef2" value="monitors" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#666666;" edge="1" source="engagement-bot" target="x-platform" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef3" value="check" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#666666;" edge="1" source="risk-checker" target="review" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LEGEND ===== -->
+        <mxCell id="legend-title" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="Implemented" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="445" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="Planned (Future)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="145" y="445" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="Decision Point" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="440" width="90" height="35" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
